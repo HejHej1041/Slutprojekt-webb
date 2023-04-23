@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    background-color: darkblue;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.primary-navigation,
+.nav {
+
+    display: flex;
+    margin-right: 100px;
+}
+
+.nav {
+    margin-left: 100px;
+}
+
+.primary-navigation {
+    gap: 10px;
+}
+
+/* lägg in koden för den gamla hamburgarmenyn */
+
+/* använd idn i html för tex buy a bathtub */
