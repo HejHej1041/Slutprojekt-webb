@@ -10,7 +10,20 @@
     <link rel="shortcut icon" href="/images/bathtub.png" type="image/x-icon">
 </head>
 
-<body>
+<body class="container">
+    <div class="mobile-menu">
+        <!-- mobile navigation hamburger button-->
+        <p class="mobile-menu__title"><a class="mobile-link" href="#">Home</a></p>
+        <div class="mobile-menu__button">
+            <button class="btn-hamburger">
+                <svg fill="var(--btn-hamburger)" class="icon-hamburger" viewbox="0 0 100 100" width="250">
+                    <rect class="line top" width="80" height="10" x="10" y="25" rx="2"></rect>
+                    <rect class="line middle" width="80" height="10" x="10" y="45" rx="2"></rect>
+                    <rect class="line bottom" width="80" height="10" x="10" y="65" rx="2"></rect>
+                </svg>
+            </button>
+        </div>
+    </div>
     <header class="header">
         <nav class="navigation">
             <ul class="primary-navigation">
