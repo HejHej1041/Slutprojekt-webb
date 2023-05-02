@@ -1,33 +1,190 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
 .navigation {
-    background-color: darkblue;
-    width: 100%;
-    height: 70px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-direction: row-reverse;
+    background-color: darkblue;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.hero-banner {
+    display: flex;
+    flex-direction: column;
+    background: url(/images/hero-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero-banner-text {
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+
+.buy-now {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to bottom, #4e89ae, #2b5876);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.buy-now:hover {
+    background: linear-gradient(to bottom, #2b5876, #4e89ae);
+}
+
+.buy-now-link {
+    text-decoration: none;
+    color: white;
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .primary-navigation,
-.nav {
-
+.main-header {
     display: flex;
     margin-right: 100px;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav {
+.main-header {
     margin-left: 100px;
 }
 
 .primary-navigation {
-    gap: 10px;
+    gap: 20px;
+    list-style-type: none;
 }
+
+
+.nav-link {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.header-text {
+    color: white;
+
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+}
+
+
+.footer-link {
+    text-decoration: none;
+}
+
+.inline-image {
+    max-width: 100px;
+    aspect-ratio: 1;
+}
+
+
+
+.coatings,
+.drain,
+.no-slipups,
+.locations {
+    background-color: lightgreen;
+    max-width: 300px;
+    min-width: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 5px;
+    scale: 1, 25;
+    max-height: 250px;
+    margin: 100px;
+
+}
+
+
+
+.my-text {
+    color: darkblue;
+    font-weight: 600;
+}
+
+.my-text:hover {
+    color: darkgreen;
+    font-weight: 10000;
+}
+
+
+.uglytub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bathtub {
+    max-width: 400px;
+}
+
+
 
 /* lägg in koden för den gamla hamburgarmenyn */
 
 /* använd idn i html för tex buy a bathtub */
+
+
+.inline-link {
+    text-decoration: none;
+    text-align: center;
+    max-width: 80%;
+}
+
+
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

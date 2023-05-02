@@ -7,27 +7,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slutprojekt</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="shortcut icon" href="/images/bathtub.png" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <div class="navigation">
+    <header class="header">
+        <nav class="navigation">
             <ul class="primary-navigation">
-                <li><a href="#">Home</a> </li>
-                <li><a href="">Goofy images</a></li>
-                <li><a href="">Buy a bathtub</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">Why us?</a></li>
+                <li><a class="nav-link" href="#">Home</a> </li>
+                <li><a class="nav-link" href="">Who we are</a></li>
+                <li><a class="nav-link" href="">What we do</a></li>
+                <li><a class="nav-link" href="">Contact us</a></li>
             </ul>
-                    
-            <div class="nav">
-                <img src="" alt="Logo">
-
+            <div class="main-header">
+                <h1 class="header-text">Bath Magic Inc</h1>
+            </div>
+        </nav>
+        <div class="hero-banner">
+            <div class="hero-banner-text">
+                <h2 class="hero-banner-title">Welcome to Bath Magic Inc!</h2>
+                <p class="hero-banner-paragraph">We make your bathroom proud</p>
+            </div>
+            <div class="buy-now">
+                <a class="buy-now-link" href="">Get started</a>
             </div>
 
         </div>
-
     </header>
+    <main id="main-content" class="main-content">
+        <section class="section-uglytub">
+            <div class="uglytub">
+                <header class="sub-title">
+                    <h2>Do you have a uglytub?</h2>
+                </header>
+                <img src="/images/bathtub.png" class="bathtub" alt="bathtub">
+                <p class="my-text" id="myText">Make your bathroom proud today</p>
+            </div>
+        </section>
+
+        <section class="choices">
+            <div class="coatings">
+                <a class="inline-link" href="/coatings/coatings.html">
+                    <header class="sub-title">
+                        <h2>Our coatings</h2>
+                    </header>
+                    <img class="inline-image" src="/images/leaf.png" alt="Leaf picture">
+                    <p>Ask about our 4 hour cure coatings</p>
+                </a>
+            </div>
+            <div class="drain">
+                <a class="inline-link" href="">
+                    <header class="sub-title">
+                        <h2>Do you have a ugly drain?</h2>
+                    </header>
+                    <img src="/images/drain.png" class="inline-image" alt="drain">
+                    <p>Make your bathroom proud today</p>
+                </a>
+            </div>
+            <div class="no-slipups">
+                <a class="inline-link" href="">
+                    <header class="sub-title">
+                        <h2>No slipups</h2>
+                    </header>
+                    <img src="/images/no-slip.png" class="inline-image" alt="no-slip">
+                    <p>Bath safety</p>
+                </a>
+
+            </div>
+            <div class="locations">
+                <a class="inline-link" href="">
+                    <header class="sub-title">
+                        <h2>Locations</h2>
+                    </header>
+                    <img src="/images/locations.png" class="inline-image" alt="locations">
+                    <p>Find a location near you</p>
+                </a>
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+    </main>
+    <footer class="footer">
+        <ul class="footer-links">
+            <li><a class="footer-link" href="#">Home</a></li>
+            <li><a class="footer-link" href="">Buy a bathtub</a></li>
+            <li><a class="footer-link" href="">About us</a></li>
+            <li><a class="footer-link" href="">Contact us</a></li>
+        </ul>
+    </footer>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
