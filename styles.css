@@ -10,6 +10,7 @@
 .header {
     display: flex;
     flex-direction: column;
+    position: sticky;
 }
 
 .navigation {
@@ -20,13 +21,14 @@
     width: 100%;
     position: sticky;
     top: 0;
+    z-index: 99;
 }
 
 .hero-banner {
     display: flex;
     flex-direction: column;
-    background: url(/images/hero-banner.jpg);
-    background-position: center;
+    background: url(/images/hero-banner-v2.jpeg);
+    background-position: center 80%;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -72,6 +74,13 @@
     gap: 30px;
 }
 
+
+
+.logo {
+    max-width: 50px;
+    border-radius: 10px;
+}
+
 .primary-navigation,
 .main-header {
     display: flex;
@@ -82,6 +91,7 @@
 
 .main-header {
     margin-left: 100px;
+    gap: 30px;
 }
 
 .primary-navigation {
@@ -102,6 +112,10 @@
 
 }
 
+
+.footer {
+    margin-top: 100px;
+}
 
 .footer-links {
     display: flex;
@@ -129,20 +143,19 @@
 .no-slipups,
 .locations {
     background-color: lightgreen;
+    width: 100%;
     max-width: 300px;
-    min-width: 270px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
     padding: 5px;
-    scale: 1, 25;
-    max-height: 250px;
-    margin: 100px;
-
 }
 
+.div-text {
+    font-size: large;
+}
 
 
 .my-text {
@@ -187,6 +200,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 150px;
 }
 
 .mobile-menu {
@@ -195,14 +209,14 @@
 
 .icon-hamburger {
     --btn-hamburger: var(--fg-clr-white);
-
     width: 20px;
     object-fit: cover;
     z-index: 9999;
 
 }
 
-.icon-hamburger .line {
+.icon-hamburger .line,
+.icon-hamburger.morphToClose .line {
     /* Morph hamburger button to open/close states */
     transition:
         rotate 200ms 0ms ease-in,
@@ -212,14 +226,6 @@
     transform-origin: center;
 }
 
-.icon-hamburger.morphToClose .line {
-    transition:
-        rotate 200ms ease-in 200ms,
-        transform 200ms ease-in,
-        opacity 0ms 200ms;
-
-    transform-origin: center;
-}
 
 .icon-hamburger.morphToClose .top {
     transform: translateY(20px);
@@ -320,4 +326,15 @@
         margin: 20px;
     }
 
+}
+
+
+.swiper {
+    width: 80%;
+    height: fit-content;
+    z-index: 9999999;
+}
+
+.swiper-slide img {
+    width: 100%;
 }
