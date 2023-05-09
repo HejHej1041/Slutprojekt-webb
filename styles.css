@@ -208,10 +208,8 @@
 
 
 
-/* lägg in koden för den gamla hamburgarmenyn */
 
 /* använd idn i html för tex buy a bathtub */
-
 
 
 
@@ -229,11 +227,10 @@
 }
 
 .icon-hamburger {
-    --btn-hamburger: var(--fg-clr-white);
     width: 20px;
     object-fit: cover;
     z-index: 9999;
-
+    fill: white;
 }
 
 .icon-hamburger .line,
@@ -275,54 +272,7 @@
 
 }
 
-.main-footer {
-    margin-top: 50px;
-    background-color: darkblue;
-    color: #fff;
-    padding: 40px 0;
-}
-
-.main-footer h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.main-footer p {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 20px;
-}
-
-.main-footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.main-footer ul li {
-    margin-bottom: 10px;
-}
-
-.main-footer ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.main-footer ul li a:hover {
-    color: #ffc107;
-}
-
-.bottom-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
 .shop-bathtub {
-
     background-color: #f1f1f1;
     width: 100%;
     height: fit-content;
@@ -333,7 +283,7 @@
 }
 
 .bathtub-section-image {
-    max-width: 1200px;
+    max-width: 1000px;
     border-radius: 5px;
 }
 
@@ -366,8 +316,101 @@
     font-weight: 200;
 }
 
+footer {
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
 
 
+
+
+
+.footer-navigation {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+
+ul li:last-child {
+    margin-right: 0;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+
+.services-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+
+.services-title {
+    font-weight: 200;
+    font-size: 35px;
+}
+
+
+.services-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+
+}
+
+
+.services-paragraph {
+    text-align: center;
+}
+
+
+
+.services-image {
+    max-width: 100px;
+    aspect-ratio: 1;
+}
+
+.services-containers {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    gap: 100px;
+}
+
+.vertical-line {
+    border-right: 1px solid lightgray;
+    max-height: fit-content;
+}
+
+
+.container-1,
+.container-2 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    align-items: center;
+    max-width: 15%;
+}
 
 @media (max-width:680px) {
 
@@ -383,6 +426,7 @@
         position: sticky;
         top: 0;
     }
+
 
     .main-header {
         display: none;
@@ -432,10 +476,14 @@
     .nav-link {
         width: fit-content;
         padding: 10px;
-        color: black;
+        color: rgb(0, 0, 0);
         background-color: blue;
         border-radius: 20px;
         margin: 20px;
+    }
+
+    .bathtub-section-image {
+        max-width: 500px;
     }
 
 }
