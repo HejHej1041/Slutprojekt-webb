@@ -10,8 +10,6 @@
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
     position: sticky;
 }
 
@@ -37,13 +35,16 @@
     background-size: cover;
     height: 100vh;
     width: 100%;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
 
 }
 
 .hero-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     color: white;
     font-size: 30px;
     font-weight: bolder;
@@ -51,7 +52,8 @@
     text-shadow: 2px 2px 2px black;
 }
 
-.get-started {
+.get-started,
+.shop-now {
     background: linear-gradient(to bottom, #4e89ae, #2b5876);
     transition: background 0.3s ease-in-out;
     width: 200px;
@@ -73,7 +75,8 @@
 }
 
 
-.get-started:hover {
+.get-started:hover,
+.shop-now:hover {
     background: linear-gradient(to bottom, #2b5876, #4e89ae);
 }
 
@@ -94,7 +97,6 @@
 
 .logo {
     max-width: 50px;
-    border-radius: 10px;
 }
 
 .primary-navigation,
@@ -121,30 +123,23 @@
     font-weight: bolder;
     text-decoration: none;
     font-size: larger;
+    text-transform: uppercase;
 }
 
 
 
 .header-text {
     color: white;
-
 }
-
-
 
 .sub-title {
     vertical-align: top;
 }
 
-
-
 .inline-image {
     max-width: 100px;
     aspect-ratio: 1;
 }
-
-
-
 
 .inline {
     text-align: center;
@@ -165,7 +160,6 @@
     text-decoration: none;
 }
 
-
 .inline-link:hover {
     background-color: aqua;
 
@@ -173,15 +167,9 @@
 
 }
 
-
-
-
-
-
 .div-text {
     font-size: large;
 }
-
 
 .my-text {
     color: darkblue;
@@ -190,9 +178,8 @@
 
 .my-text:hover {
     color: darkgreen;
-    font-weight: 10000;
+    font-weight: 800;
 }
-
 
 .uglytub-div {
     display: flex;
@@ -206,14 +193,7 @@
     max-width: 400px;
 }
 
-
-
-
 /* använd idn i html för tex buy a bathtub */
-
-
-
-
 
 .mobile-menu {
     display: none;
@@ -237,7 +217,6 @@
     transform-origin: center;
 }
 
-
 .icon-hamburger.morphToClose .top {
     transform: translateY(20px);
     rotate: 45deg;
@@ -254,6 +233,7 @@
 
 
 /* link styling */
+
 .mobile-link {
     color: white;
     text-decoration: none;
@@ -296,16 +276,16 @@
     margin-left: 200px;
     align-items: center;
     width: fit-content;
-    gap: 20px;
+    gap: 30px;
 
 }
+
+
 
 .line {
     display: block;
     border-bottom: 1px solid black;
     height: 1px;
-    margin: 10px 0;
-
 }
 
 
@@ -330,15 +310,11 @@ footer {
 }
 
 
-
-
-
 .footer-navigation {
     list-style: none;
     display: flex;
     gap: 50px;
 }
-
 
 ul li:last-child {
     margin-right: 0;
@@ -360,28 +336,21 @@ ul li:last-child {
     gap: 50px;
 }
 
-
-
 .services-title {
     font-weight: 200;
     font-size: 35px;
 }
 
-
 .services-text {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 10px;
-
+    gap: 5px;
 }
-
 
 .services-paragraph {
     text-align: center;
 }
-
-
 
 .services-image {
     max-width: 100px;
@@ -393,21 +362,32 @@ ul li:last-child {
     justify-content: center;
     width: auto;
     gap: 100px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.horizontal-line {
+    border: 1px solid lightgray;
+    width: 80%;
+    opacity: 0.3;
 }
 
 .vertical-line {
-    border-right: 1px solid lightgray;
+    border: 1px solid lightgray;
     max-height: fit-content;
+    opacity: 0.3;
+
 }
 
-
 .container-1,
-.container-2 {
+.container-2,
+.container-3 {
     display: flex;
     flex-direction: column;
     flex-grow: 0;
     align-items: center;
     max-width: 15%;
+    gap: 10px;
 }
 
 @media (max-width:680px) {
@@ -484,4 +464,8 @@ ul li:last-child {
         max-width: 500px;
     }
 
+}
+
+@media (min-width: 681px) and (max-width: 1000px) {
+    /* CSS styles for tablets go here */
 }
