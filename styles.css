@@ -10,21 +10,21 @@
     outline: 1px dotted red;
 }
 
-.header {
-    position: sticky;
-}
 
 .navigation {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    background-color: darkblue;
+    background-color: white;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 99;
     padding-top: 20px;
     padding-bottom: 20px;
+    box-shadow: 10px 10px 5px 4px rgba(137, 118, 232, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 4px rgba(137, 118, 232, 0.75);
+    -moz-box-shadow: 10px 10px 5px 4px rgba(137, 118, 232, 0.75);
 }
 
 .hero-banner {
@@ -94,8 +94,6 @@
     margin-top: 100px;
 }
 
-
-
 .logo {
     max-width: 50px;
 }
@@ -120,7 +118,7 @@
 
 
 .nav-link {
-    color: white;
+    color: rgb(137, 118, 232);
     font-weight: bolder;
     text-decoration: none;
     font-size: larger;
@@ -148,6 +146,7 @@
 
 }
 
+
 .inline-link {
     background-color: lightgreen;
     width: 300px;
@@ -161,9 +160,10 @@
     text-decoration: none;
 }
 
+
+
 .inline-link:hover {
     background-color: aqua;
-
     transition: background-color 0.3s ease-in-out;
 
 }
@@ -196,9 +196,16 @@
 
 /* använd idn i html för tex buy a bathtub */
 
+
+
+
 .mobile-menu {
     display: none;
 }
+
+
+
+
 
 .icon-hamburger {
     width: 20px;
@@ -206,6 +213,8 @@
     z-index: 9999;
     fill: white;
 }
+
+
 
 .icon-hamburger .line,
 .icon-hamburger.morphToClose .line {
@@ -367,6 +376,10 @@ ul li:last-child {
     opacity: 0.3;
 }
 
+.horizontal-line-services {
+    display: none;
+}
+
 .vertical-line {
     border: 1px solid lightgray;
     max-height: fit-content;
@@ -383,6 +396,8 @@ ul li:last-child {
     align-items: center;
     max-width: 15%;
     gap: 10px;
+    text-align: center;
+
 }
 
 
@@ -471,6 +486,26 @@ ul li:last-child {
     .bathtub-section-image {
         max-width: 500px;
     }
+
+    .horizontal-line-services {
+        display: flex;
+        border: 1px solid lightgray;
+        width: 80%;
+        opacity: 0.3;
+    }
+
+    .services-containers {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+
+    .shop-bathtub-items {
+        max-width: 90%;
+    }
+
+
 }
 
 @media (min-width: 770px) and (max-width: 1300px) {
