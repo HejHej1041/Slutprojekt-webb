@@ -6,9 +6,9 @@
 }
 
 
-*:active>* {
+/* *:active>* {
     outline: 1px dotted red;
-}
+} */
 
 
 .navigation {
@@ -73,6 +73,7 @@
     font-size: 30px;
     font-weight: bolder;
     text-shadow: 2px 2px 2px black;
+    text-align: center;
 }
 
 .get-started,
@@ -160,16 +161,16 @@
 }
 
 .my-text:hover {
-    color: darkgreen;
+    color: rgb(116, 215, 252);
     font-weight: 800;
 }
 
-.uglytub-div {
+.javascript-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
+    border-radius: 5px;
 }
 
 .bathtub {
@@ -492,7 +493,6 @@ ul li:last-child {
         height: 2em;
         background: darkblue;
         padding-inline: .5rem;
-        z-index: 99;
         position: sticky;
         top: 0;
     }

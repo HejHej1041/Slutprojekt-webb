@@ -86,12 +86,25 @@
 
 }
 
-
-.hero-banner-text {
+.text {
     color: white;
     font-size: 30px;
     font-weight: bolder;
     text-shadow: 2px 2px 4px #000000;
+
+}
+
+.paragraph {
+    max-width: 80%;
+}
+
+
+.hero-banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 
