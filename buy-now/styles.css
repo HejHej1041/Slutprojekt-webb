@@ -29,17 +29,36 @@
 }
 
 
+.navigation.sticky {
+    width: fit-content;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+
+header.sticky {
+    display: none;
+
+}
+
+.primary-navigation.sticky {
+    margin-right: 0;
+}
+
+
+
 .nav-link {
     color: rgb(137, 118, 232);
     font-weight: bolder;
     text-decoration: none;
-    font-size: larger;
+    font-size: large;
     text-transform: uppercase;
 }
 
 .nav-link:hover {
-    color: rgb(116, 215, 252);
+    font-size: larger;
     transition: ease-in-out 0.3s;
+    color: rgba(116, 215, 252, 0.75);
 }
 
 .logo {
@@ -68,7 +87,8 @@
 
 .header-text {
     color: rgb(137, 118, 232);
-    text-transform: capitalize;
+    text-transform: uppercase;
+    font-size: large;
 }
 
 .hero-banner {
@@ -112,6 +132,7 @@
 .mobile-menu {
     display: none;
 }
+
 
 
 
@@ -161,7 +182,7 @@
 }
 
 .mobile-link:visited {
-    color: white;
+    color: black;
 
 }
 
