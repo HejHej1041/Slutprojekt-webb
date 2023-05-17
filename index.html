@@ -6,28 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slutprojekt</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="/images/bathtub.png" type="image/x-icon">
+    <script src="index.js" defer></script>
+
 </head>
 
 <body class="container">
-    <div class="mobile-menu">
-        <!-- mobile navigation hamburger button-->
-        <p class="mobile-menu__title"><a class="mobile-link" href="#">Home</a></p>
-        <div class="mobile-menu__button">
-            <button class="btn-hamburger">
-                <svg class="icon-hamburger" viewbox="0 0 100 100" width="250">
-                    <rect class="line top" width="80" height="10" x="10" y="25" rx="2"></rect>
-                    <rect class="line middle" width="80" height="10" x="10" y="45" rx="2"></rect>
-                    <rect class="line bottom" width="80" height="10" x="10" y="65" rx="2"></rect>
-                </svg>
-            </button>
-        </div>
+    <div class="nav-menu">
+        <input id="toggle" type="checkbox">
+        <label class="toggle-container" for="toggle">
+            <span class="line"></span>
+            <span class="line"></span>
+        </label>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/shop-now/shop-now.html">
+                        <span>Get started</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services">
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="">
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <nav class="navigation">
+    <div class="navigation">
         <ul class="primary-navigation">
             <li><a class="nav-link" href="#">Home</a> </li>
-            <li><a class="nav-link" href="/buy-now/index.html">Get started</a></li>
+            <li><a class="nav-link" href="/shop-now/shop-now.html">Get started</a></li>
             <li><a class="nav-link" href="#services">Services</a></li>
             <li><a class="nav-link" href="">Contact us</a></li>
         </ul>
@@ -35,27 +55,26 @@
             <img src="/images/bathtub.png" class="logo" alt="logo">
             <h1 class="header-text">Bath magic inc</h1>
         </header>
-    </nav>
+    </div>
     <header class="header">
         <div class="hero-banner">
-            <div class=" hero-banner-text">
+            <div class="hero-banner-text">
                 <h2 class="hero-banner-title">Welcome to Bath Magic Inc!</h2>
                 <p class="hero-banner-paragraph">We make your bathroom proud</p>
             </div>
-            <a class="button" href="/buy-now/index.html">
+            <a class="button" href="/shop-now/shop-now.html">
                 <div class="get-started">
                     <p class="button-text"> Get started</p>
                 </div>
             </a>
-
         </div>
     </header>
     <main id="main-content" class="main-content">
-        <!--Har bara med denna section för att visa att jag kan lite basic javascript-->
+        <!--Fixa till denna section-->
         <section class="basic-javascript-section">
             <div class="javascript-div">
                 <header class="sub-title">
-                    <h2>Do you have a uglytub?</h2>
+                    <h2>Fixa till denna section</h2>
                 </header>
                 <p class="my-text" id="myText">Make your bathroom proud today</p>
             </div>
@@ -68,7 +87,7 @@
                     <div class="horizontal-line"></div>
                     <p>Discover a bathtub style that delights all of your senses.
                     </p>
-                    <a class="button" href="/buy-now/index.html">
+                    <a class="button" href="/shop-now/shop-now.html">
                         <div class="browse-bathtubs">
                             <p class="button-text">Browse bathtubs</p>
                         </div>
@@ -88,17 +107,18 @@
                         We offer a wide range of services.
                 </div>
                 <div class="services-containers">
-                    <div class="container-1">
+                    <div class="containers">
                         <img class="services-image" src="/images/cleaning-gear.png" alt="cleaning gear image">
                         <h3>Coatings</h3>
-                        <p class="services-paragraph">Our coatings are the best in the world. We offer a wide range of
+                        <p class="services-paragraph">Our coatings are the best in the world. We offer a wide range
+                            of
                             coatings to
                             make your bathroom
                             proud.</p>
                     </div>
                     <div class="horizontal-line-services"></div>
                     <div class="vertical-line"></div>
-                    <div class="container-2">
+                    <div class="containers">
                         <img class="services-image" src="/images/drain.png" alt="drain image">
                         <h3>Drain Recacing</h3>
                         <p class="services-paragraph">
@@ -108,7 +128,7 @@
                     </div>
                     <div class="vertical-line"></div>
                     <div class="horizontal-line-services"></div>
-                    <div class="container-3">
+                    <div class="containers">
                         <img class="services-image" src="/images/no-diving.png" alt="leaf image">
                         <h3>Bath Safety</h3>
                         <p class="services-paragraph">We insure that your bathtub is safe and secure for you and
@@ -131,7 +151,6 @@
             <p>&copy; 2023 Bath Magic Inc. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="index.js"></script>
 </body>
 
 </html>

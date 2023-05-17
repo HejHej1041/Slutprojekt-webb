@@ -35,20 +35,22 @@
 }
 
 
-.navigation.sticky {
+.navigation.scroll {
     width: fit-content;
     margin: auto;
     padding: 20px;
 }
 
 
-header.sticky {
+header.scroll {
     display: none;
 
 }
 
-.primary-navigation.sticky {
+.primary-navigation.scroll {
+    transition: ease-in-out 0.3s;
     margin-right: 0;
+
 }
 
 .nav-link {
@@ -67,6 +69,7 @@ header.sticky {
 
 
 
+/* Här behöver jag ha samma kod två gånger och kan inte lägga in dem med "," på samma rad för att sedan bara lägga in "hero-banner-browse" bilden på en separat tag */
 .hero-banner {
     display: flex;
     flex-direction: column;
@@ -81,6 +84,22 @@ header.sticky {
     align-items: center;
 
 }
+
+
+.hero-banner-browse {
+    display: flex;
+    flex-direction: column;
+    background: url(/images/hero-banner-browse.jpg);
+    background-position: center 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .hero-banner-text {
     display: flex;
@@ -180,10 +199,6 @@ header.sticky {
     cursor: pointer;
 }
 
-.my-text:hover {
-    color: rgb(116, 215, 252);
-    font-weight: 800;
-}
 
 .javascript-div {
     display: flex;
@@ -193,70 +208,8 @@ header.sticky {
     border-radius: 5px;
 }
 
-.bathtub {
-    max-width: 400px;
-}
-
-/* använd idn i html för tex buy a bathtub */
 
 
-
-
-.mobile-menu {
-    display: none;
-}
-
-
-
-
-
-.icon-hamburger {
-    width: 20px;
-    object-fit: cover;
-    z-index: 9999;
-    fill: white;
-}
-
-
-
-.icon-hamburger .line,
-.icon-hamburger.morphToClose .line {
-    /* Morph hamburger button to open/close states */
-    transition:
-        rotate 200ms 0ms ease-in,
-        transform 200ms 200ms ease-in,
-        opacity 0ms 200ms;
-
-    transform-origin: center;
-}
-
-.icon-hamburger.morphToClose .top {
-    transform: translateY(20px);
-    rotate: 45deg;
-}
-
-.icon-hamburger.morphToClose .middle {
-    opacity: 0;
-}
-
-.icon-hamburger.morphToClose .bottom {
-    transform: translateY(-20px);
-    rotate: -45deg;
-}
-
-
-/* link styling */
-
-.mobile-link {
-    color: white;
-    text-decoration: none;
-    cursor: grab;
-}
-
-.mobile-link:visited {
-    color: black;
-
-}
 
 .bathtub-section {
     background-color: #f1f1f1;
@@ -295,11 +248,6 @@ header.sticky {
     height: 1px;
 }
 
-
-.shop-title {
-    font-size: 30px;
-    font-weight: 200;
-}
 
 footer {
     background-color: #333;
@@ -391,88 +339,234 @@ ul li:last-child {
 
 }
 
-.container-1,
-.container-2,
-.container-3 {
+.containers {
     display: flex;
     flex-direction: column;
     flex-grow: 0;
     align-items: center;
-    max-width: 15%;
+    max-width: 20%;
     gap: 10px;
     text-align: center;
 
 }
 
 
-/* fråga johan om jag borde ha hamburgar menyn i tablet view osv */
-@media (max-width:769px) {
+.shop-title {
+    font-size: 30px;
+    font-weight: 200;
+}
 
-    /* Mobile view */
-    .mobile-menu {
+/* Menu */
+
+/* Nav menu button */
+
+.nav-menu {
+    display: none;
+
+}
+
+@media (max-width:769px) {
+    .nav-menu {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 2em;
-        background: darkblue;
-        padding-inline: .5rem;
-        z-index: 99;
+        justify-content: right;
         position: sticky;
         top: 0;
+        /*lägg till backroundsfärg */
     }
 
 
-    .main-header {
+    /* Nav menu button */
+    .toggle-container {
+        position: relative;
+        padding: 10px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: 0 0 0 0 rgb(255 255 255);
+        border-radius: 100%;
+        transition: transform 300ms, box-shadow 1000ms;
+    }
+
+    .toggle-container .line {
+        width: 32px;
+        height: 3px;
+        background-color: #373737;
+        display: block;
+        margin: 3px 0;
+        border-radius: 5px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(1) {
+        -webkit-transform: translateY(5px) rotate(45deg);
+        -ms-transform: translateY(13px) rotate(45deg);
+        -o-transform: translateY(13px) rotate(45deg);
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(3) {
+        opacity: 0;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(2) {
+        -webkit-transform: translateY(-5px) rotate(-45deg);
+        -ms-transform: translateY(-13px) rotate(-45deg);
+        -o-transform: translateY(-13px) rotate(-45deg);
+        transform: translateY(-4px) rotate(-45deg);
+        width: 32px;
+    }
+
+    #toggle:checked~nav {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #toggle:checked~.toggle-container .header-button-icon {
+        transform: rotate(180deg);
+    }
+
+    nav {
+        transform: translateX(100%);
+        opacity: 0;
+        transition: 300ms;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 260px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+
+    .nav-item {
+        display: flex;
+    }
+
+    .nav-item a {
+        width: 100%;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    .nav-item span {
+        font-family: sans-serif;
+        color: #575757;
+    }
+
+    .nav-item:hover {
+        background-color: #ededed;
+    }
+
+    /* Nav menu button */
+    #toggle {
         display: none;
     }
 
-    .mobile-menu__title {
-        color: white;
+    .toggle-container {
+        position: relative;
+        padding: 10px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: 0 0 0 0 rgb(255 255 255);
+        border-radius: 100%;
+        transition: transform 300ms, box-shadow 1000ms;
     }
 
-    .primary-navigation {
-        position: fixed;
-        inset: 35px 0 0 10%;
-        background: rgb(255, 255, 255);
-        padding: min(5vh, 10rem);
+    .toggle-container .line {
+        width: 32px;
+        height: 3px;
+        background-color: #373737;
+        display: block;
+        margin: 3px 0;
+        border-radius: 5px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(1) {
+        -webkit-transform: translateY(5px) rotate(45deg);
+        -ms-transform: translateY(13px) rotate(45deg);
+        -o-transform: translateY(13px) rotate(45deg);
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(3) {
+        opacity: 0;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(2) {
+        -webkit-transform: translateY(-5px) rotate(-45deg);
+        -ms-transform: translateY(-13px) rotate(-45deg);
+        -o-transform: translateY(-13px) rotate(-45deg);
+        transform: translateY(-4px) rotate(-45deg);
+        width: 32px;
+    }
+
+    #toggle:checked~nav {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #toggle:checked~.toggle-container .header-button-icon {
+        transform: rotate(180deg);
+    }
+
+    nav {
         transform: translateX(100%);
-        transition: transform 250ms ease-in-out;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 50px;
+        opacity: 0;
+        transition: 300ms;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 260px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 
-    .mobile-portfolio-link {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    .primary-navigation.open {
-        transform: translateX(0%);
-    }
-
-    .btn-hamburger {
-        display: flex;
-        background: transparent;
-        border: 0;
-    }
-
-    .main-content {
-        padding: 20px;
+    .nav-list {
         list-style: none;
-        width: 90%;
-        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
     }
 
-    .nav-link {
-        width: fit-content;
-        padding: 10px;
-        color: rgb(0, 0, 0);
-        background-color: blue;
-        border-radius: 20px;
-        margin: 20px;
+    .nav-item {
+        display: flex;
+    }
+
+    .nav-item a {
+        width: 100%;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    .nav-item span {
+        font-family: sans-serif;
+        color: #575757;
+    }
+
+    .nav-item:hover {
+        background-color: #ededed;
+    }
+
+    .navigation {
+        display: none;
     }
 
     .bathtub-container {
@@ -481,14 +575,11 @@ ul li:last-child {
         gap: 40px;
     }
 
-    .bathtub-section-image {
-        max-width: 500px;
-    }
 
     .horizontal-line-services {
         display: flex;
         border: 1px solid lightgray;
-        width: 80%;
+        width: 45%;
         opacity: 0.3;
     }
 
@@ -498,79 +589,226 @@ ul li:last-child {
         gap: 40px;
     }
 
+    .containers {
+        max-width: 50%;
+    }
 
     .shop-bathtub-items {
         max-width: 90%;
+        text-align: center;
+    }
+
+
+    .vertical-line {
+        display: none;
     }
 
 
 }
 
-@media (min-width: 770px) and (max-width: 1300px) {
-    .mobile-menu {
+@media (min-width: 770px) and (max-width: 1040px) {
+    .nav-menu {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 2em;
-        background: darkblue;
-        padding-inline: .5rem;
+        justify-content: right;
         position: sticky;
         top: 0;
+        /*lägg till backroundsfärg */
     }
 
 
-    .main-header {
+    /* Nav menu button */
+    .toggle-container {
+        position: relative;
+        padding: 10px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: 0 0 0 0 rgb(255 255 255);
+        border-radius: 100%;
+        transition: transform 300ms, box-shadow 1000ms;
+
+    }
+
+    .toggle-container .line {
+        width: 32px;
+        height: 3px;
+        background-color: #373737;
+        display: block;
+        margin: 3px 0;
+        border-radius: 5px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(1) {
+        -webkit-transform: translateY(5px) rotate(45deg);
+        -ms-transform: translateY(13px) rotate(45deg);
+        -o-transform: translateY(13px) rotate(45deg);
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(3) {
+        opacity: 0;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(2) {
+        -webkit-transform: translateY(-5px) rotate(-45deg);
+        -ms-transform: translateY(-13px) rotate(-45deg);
+        -o-transform: translateY(-13px) rotate(-45deg);
+        transform: translateY(-4px) rotate(-45deg);
+        width: 32px;
+    }
+
+    #toggle:checked~nav {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #toggle:checked~.toggle-container .header-button-icon {
+        transform: rotate(180deg);
+    }
+
+    nav {
+        transform: translateX(100%);
+        opacity: 0;
+        transition: 300ms;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 260px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+
+    .nav-item {
+        display: flex;
+    }
+
+    .nav-item a {
+        width: 100%;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    .nav-item span {
+        font-family: sans-serif;
+        color: #575757;
+    }
+
+    .nav-item:hover {
+        background-color: #ededed;
+    }
+
+    /* Nav menu button */
+    #toggle {
         display: none;
     }
 
-    .mobile-menu__title {
-        color: white;
+    .toggle-container {
+        position: relative;
+        padding: 10px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: 0 0 0 0 rgb(255 255 255);
+        border-radius: 100%;
+        transition: transform 300ms, box-shadow 1000ms;
     }
 
-    .primary-navigation {
-        position: fixed;
-        inset: 35px 0 0 10%;
-        background: rgb(255, 255, 255);
-        padding: min(5vh, 10rem);
+    .toggle-container .line {
+        width: 32px;
+        height: 3px;
+        background-color: #373737;
+        display: block;
+        margin: 3px 0;
+        border-radius: 5px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(1) {
+        -webkit-transform: translateY(5px) rotate(45deg);
+        -ms-transform: translateY(13px) rotate(45deg);
+        -o-transform: translateY(13px) rotate(45deg);
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(3) {
+        opacity: 0;
+    }
+
+    #toggle:checked~.toggle-container .line:nth-child(2) {
+        -webkit-transform: translateY(-5px) rotate(-45deg);
+        -ms-transform: translateY(-13px) rotate(-45deg);
+        -o-transform: translateY(-13px) rotate(-45deg);
+        transform: translateY(-4px) rotate(-45deg);
+        width: 32px;
+    }
+
+    #toggle:checked~nav {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #toggle:checked~.toggle-container .header-button-icon {
+        transform: rotate(180deg);
+    }
+
+    nav {
         transform: translateX(100%);
-        transition: transform 250ms ease-in-out;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 50px;
+        opacity: 0;
+        transition: 300ms;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 260px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 
-    .mobile-portfolio-link {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    .primary-navigation.open {
-        transform: translateX(0%);
-    }
-
-    .btn-hamburger {
-        display: flex;
-        background: transparent;
-        border: 0;
-
-    }
-
-    .main-content {
-        padding: 20px;
+    .nav-list {
         list-style: none;
-        width: 90%;
-        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
     }
 
-    .nav-link {
-        width: fit-content;
-        padding: 10px;
-        color: rgb(0, 0, 0);
-        background-color: blue;
-        border-radius: 20px;
-        margin: 20px;
+    .nav-item {
+        display: flex;
+    }
+
+    .nav-item a {
+        width: 100%;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    .nav-item span {
+        font-family: sans-serif;
+        color: #575757;
+    }
+
+    .nav-item:hover {
+        background-color: #ededed;
+    }
+
+    .navigation {
+        display: none;
     }
 
     .bathtub-container {
@@ -579,14 +817,11 @@ ul li:last-child {
         gap: 40px;
     }
 
-    .bathtub-image {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
 
-    .bathtub-section-image {
-        max-width: 500px;
-    }
+
+
+
+
+
 
 }
