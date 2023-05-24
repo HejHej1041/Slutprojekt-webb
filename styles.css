@@ -6,11 +6,6 @@
 }
 
 
-/* *:active>* {
-    outline: 1px dotted red;
-} */
-
-
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -125,6 +120,7 @@ header.scroll {
     color: white;
     font-weight: bolder;
     text-align: center;
+    text-transform: capitalize;
 
 }
 
@@ -190,8 +186,6 @@ header.scroll {
     gap: 10px;
     border-radius: 5px;
 }
-
-
 
 
 .bathtub-section {
@@ -276,18 +270,17 @@ ul li:last-child {
 
 .services-title {
     font-weight: 200;
-    font-size: 35px;
+    font-size: 32px;
 }
 
 .services-text {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 5px;
+    gap: 15px;
 }
 
 .services-paragraph {
-    text-align: center;
     color: darkgrey;
 }
 
