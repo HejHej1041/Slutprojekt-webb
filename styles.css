@@ -74,6 +74,7 @@ header.scroll {
 
 .hero-banner-browse {
     background: url(/images/hero-banner-browse.jpg);
+    text-transform: capitalize;
 }
 
 .hero-banner,
@@ -103,23 +104,22 @@ header.scroll {
     text-align: center;
 }
 
-.hero-banner-browse {
-    text-transform: capitalize;
-}
 
-.get-started,
-.browse-bathtubs {
+.button {
+    display: block;
+    text-decoration: none;
     background: linear-gradient(to bottom, #4e89ae, #2b5876);
     transition: background 0.3s ease-in-out;
     width: 200px;
     padding: 20px;
     border-radius: 5px;
+
 }
 
-.button {
-    display: block;
-    text-decoration: none;
+.button:hover {
+    background: linear-gradient(to bottom, #2b5876, #4e89ae);
 }
+
 
 .button-text {
     color: white;
@@ -127,18 +127,6 @@ header.scroll {
     text-align: center;
 
 }
-
-
-.get-started:hover,
-.browse-bathtubs:hover {
-    background: linear-gradient(to bottom, #2b5876, #4e89ae);
-}
-
-.buy-now-link {
-    text-decoration: none;
-    color: white;
-}
-
 
 .main-content {
     display: flex;
